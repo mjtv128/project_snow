@@ -15,8 +15,6 @@ ActiveRecord::Schema.define(version: 2019_09_30_131204) do
   create_table "attendeesmeetups", force: :cascade do |t|
     t.integer "user_id"
     t.integer "meetup_id"
-    t.index ["meetup_id"], name: "index_attendeesmeetups_on_meetup_id"
-    t.index ["user_id"], name: "index_attendeesmeetups_on_user_id"
   end
 
   create_table "conversations", force: :cascade do |t|
@@ -25,20 +23,18 @@ ActiveRecord::Schema.define(version: 2019_09_30_131204) do
     t.integer "recipient_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["recipient_id"], name: "index_conversations_on_recipient_id"
-    t.index ["sender_id"], name: "index_conversations_on_sender_id"
   end
 
   create_table "meetups", force: :cascade do |t|
     t.string "event_name"
     t.text "description"
     t.string "location"
-    t.string "time"
-    t.string "date"
+    t.datetime "date_time"
     t.integer "resort_id"
+    t.integer "organiser_id"
+    t.integer "attendees_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["resort_id"], name: "index_meetups_on_resort_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -46,7 +42,6 @@ ActiveRecord::Schema.define(version: 2019_09_30_131204) do
     t.integer "conversation_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
   end
 
   create_table "resorts", force: :cascade do |t|
@@ -68,8 +63,6 @@ ActiveRecord::Schema.define(version: 2019_09_30_131204) do
     t.integer "resort_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["resort_id"], name: "index_reviews_on_resort_id"
-    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -78,10 +71,9 @@ ActiveRecord::Schema.define(version: 2019_09_30_131204) do
     t.string "email"
     t.string "password"
     t.integer "age"
-    t.integer "usersmeetups_id"
+    t.integer "attendeesmeetups_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["usersmeetups_id"], name: "index_users_on_usersmeetups_id"
   end
 
 end

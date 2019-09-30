@@ -2,8 +2,8 @@ class Conversations < ActiveRecord::Migration[6.0]
   def change
     create_table :conversations do |t|
       t.string :title 
-      t.references :sender
-      t.references :recipient
+      t.integer :sender_id
+      t.integer :recipient_id
 
       t.timestamps
     end

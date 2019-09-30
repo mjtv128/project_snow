@@ -4,8 +4,8 @@ class Reviews < ActiveRecord::Migration[6.0]
       t.string :title 
       t.text :content
       t.integer :rating 
-      t.references :user
-      t.references :resort
+      t.integer :user_id
+      t.integer :resort_id
 
       t.timestamps
 
