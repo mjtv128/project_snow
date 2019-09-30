@@ -1,7 +1,7 @@
-class Conversations < ActiveRecord::Migration[6.0]
+class CreateConversations < ActiveRecord::Migration[6.0]
   def change
     create_table :conversations do |t|
-      t.string :title 
+      t.string :title
       t.integer :sender_id
       t.integer :recipient_id
 

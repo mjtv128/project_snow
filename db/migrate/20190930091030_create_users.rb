@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :email
       t.string :password
       t.integer :age
-      t.integer :attendeesmeetups_id
+      t.integer :attendees_meetups_id
 
       t.timestamps
     end

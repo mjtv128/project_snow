@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_30_131204) do
+ActiveRecord::Schema.define(version: 2019_09_30_155353) do
 
-  create_table "attendeesmeetups", force: :cascade do |t|
+  create_table "attendees_meetups", force: :cascade do |t|
     t.integer "user_id"
     t.integer "meetup_id"
   end
@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 2019_09_30_131204) do
     t.datetime "date_time"
     t.integer "resort_id"
     t.integer "organiser_id"
-    t.integer "attendees_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -71,7 +70,7 @@ ActiveRecord::Schema.define(version: 2019_09_30_131204) do
     t.string "email"
     t.string "password"
     t.integer "age"
-    t.integer "attendeesmeetups_id"
+    t.integer "attendees_meetups_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
