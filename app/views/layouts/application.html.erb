@@ -9,6 +9,7 @@
 
     <div style="padding-left: 15px;">
     <% if logged_in? %>
+    <p>Currently logged in as:<%= current_user.first_name %></p>
     <a class="btn btn-outline-success" href="/logout" role="button">
       Log Out
       </a>
