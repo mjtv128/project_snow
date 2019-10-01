@@ -2,3 +2,5 @@
 <h3>Authored by: <%= @review.user.first_name %></h3><br>
 <%= @review.content %><br>
 Rating: <%= @review.rating %><br>
+
+<%= link_to "All Reviews", reviews_path %>
