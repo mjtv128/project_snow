@@ -11,6 +11,7 @@ require 'faker'
     )
 end
 
+User.create(first_name: "HIhihihihi", last_name: "byeeee", email: "hihihi@gmail.com", password: 'github123', age: 20, attendees_meetups_id: 3)
 
 20.times do 
     Resort.create(

@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   resources :users
   resources :reviews
 
-
-  get 'login', to: 'sessions#new'
-  post 'login', to: 'sessions#create'
-  delete 'logout', to: 'sessions#destroy'
+  root 'matches#index'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
 
   resources :resorts, only: [:index, :show]
   resources :conversation, only: [:create, :destroy, :show]

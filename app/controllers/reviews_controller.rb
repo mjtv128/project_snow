@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+    before_action :require_user, only: [:new, :create, :edit, :update, :destroy]
+
     def show 
         @review = Review.find(params[:id])
     end

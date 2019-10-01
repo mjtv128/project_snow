@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2019_09_30_155353) do
     t.string "first_name"
     t.string "last_name"
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
     t.integer "age"
     t.integer "attendees_meetups_id"
     t.datetime "created_at", precision: 6, null: false
