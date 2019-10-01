@@ -1,0 +1,34 @@
+
+<% if @review.errors.any? %>
+    <div id="error_explanation"> 
+        <h2>
+            <%= pluralize(@review.errors.count, "error") %>
+            prohibited this post from being saved!
+        </h2>
+
+        <ul>
+        <% @review.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+        </ul>
+    </div>
+<% end %>
+
+
+
+<%= form_for(@review) do |f| %>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %><br><br>
+
+    <%= f.label :content %><br>
+    <%= f.text_area :content %><br><br>
+
+    <%= f.label :rating %><br>
+    <%= f.number_field :rating %><br><br>
+
+    <%= f.label :resort_id %><br>
+    <%= f.collection_select :resort_id, Resort.all, :id, :resort_name %><br><br>
+
+ 
+    <%= f.submit %>
+<% end %>
