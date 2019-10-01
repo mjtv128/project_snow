@@ -17,3 +17,12 @@ require bootstrap-sprockets
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+
+//= require jquery
+//= require rails-ujs
+//= require turbolinks
+//= require bootstrap-sprockets
+//= require gmaps/google
+//= require underscore
+//= require_tree .

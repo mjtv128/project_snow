@@ -11,7 +11,6 @@ class ReviewsController < ApplicationController
         @review = Review.new
     end
 
-
     def create
         @review = Review.new(review_params)
         if @review.valid?
@@ -45,4 +44,6 @@ class ReviewsController < ApplicationController
     def review_params
         params.require(:review).permit!
     end
+
 end
+
