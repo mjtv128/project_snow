@@ -1,12 +1,12 @@
 <h1 align= 'center'>Log in</h1>
 <%= form_for(:session, url: login_path) do |f| %>
-    <%= f.label :email %>
+    <p align= 'center'><%= f.label :email %><br>
     <%= f.email_field :email %><br><br>
 
-    <%= f.label :password %>
+    <%= f.label :password %><br>
     <%= f.password_field :password %><br><br>
  
-    <%= f.submit "Log In" %>
+    <%= f.submit "Log In" %></p>
 <% end %>
 
 hihihi@gmail.com  
