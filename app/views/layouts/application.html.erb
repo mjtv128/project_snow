@@ -5,10 +5,35 @@
     <a class="btn btn-outline-primary" href="/reviews" role="button">
     REVIEWS
     </a>
-    <div style="padding-left: 10px;">
+    </div>
+
+    <div style="padding-left: 15px;">
+    <% if logged_in? %>
+    <a class="btn btn-outline-success" href="/logout" role="button">
+      Log Out
+      </a>
+  <div class='dropdown'>
+  <a href= "#" class="dropdown-toggle" data-toggle= 'dropdown' role='button' aria-haspopup='true' aria-exapnded='false'>Your Profile<span class='caret'></span></a>
+  <ul class='dropdown-menu'>
+  <li><%= link_to "Edit Your Profile", edit_user_path(current_user) %></a></li>
+  <li><%= link_to "View Your Profile", user_path(current_user) %></li>
+  <li role='separator' class='divider'></li>
+  <li><a href="#">Separated link</a></li>
+  </ul>
+  </div>
+      <% else %>
+      <a class="btn btn-outline-success" href="/login" role="button">
+      Log In
+      </a>
+      <div style="btn btn-outline-success">
       <a class="btn btn-outline-success" href="/signup" role="button">
       Sign Up
       </a>
+    </div>
+    <% end %>
+    </div>
+
+  
     </div>
   </form>
 </nav>
@@ -28,8 +53,10 @@
 <script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'></script>
 
   </head>
-
   <body>
+  <% flash.each do |name, msg| %>
+ <%= msg %>
+  <% end %>
     <%= yield %>
   </body>
 </html>
