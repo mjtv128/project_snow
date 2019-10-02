@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
     def new 
-
+ 
     end
 
     def create
@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
         flash[:success] = "You have successfully logged in"
         redirect_to user_path(user)
         else
-        flash.now[:danger] = "Incorrect email/ password combination. Please try again"
+        flash.now[:danger] = "Incorrect email/password combination. Please try again."
         render :new
         end
     end
