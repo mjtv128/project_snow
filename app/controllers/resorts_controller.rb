@@ -40,5 +40,5 @@ class ResortsController < ApplicationController
         params.require(:resort).permit!
     end
 
-
 end
+
