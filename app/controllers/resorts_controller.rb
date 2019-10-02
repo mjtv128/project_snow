@@ -1,5 +1,5 @@
 class ResortsController < ApplicationController
-    def index
+    def index 
         @resorts = Resort.all
     end
 
@@ -38,6 +38,10 @@ class ResortsController < ApplicationController
 
     def resort_params
         params.require(:resort).permit!
+    end
+
+end
+        
     end
 
 end

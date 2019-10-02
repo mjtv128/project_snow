@@ -1,0 +1,21 @@
+<h4><%= @resort.resort_name %></h4><br>
+<p>
+<strong>Location:</strong> <%= @resort.location %></p>
+<p>
+<strong>Map:</strong> <%= "MAP INFO" %> GOOGLE MAP?</p>
+<p>
+<strong>Weather: </strong> <%= "WEATHER INFO" %></p>
+<p>
+<strong>Population: </strong><%= 'POPULATION DATA'%></p>
+<p>
+<strong>Piste Map:</strong><%= 'PISTE MAP DATA' %></p>
+<p>
+<strong>Meetups happening here:</strong>
+<% @resort.meetups.each do |meetup| %>
+<ul>
+<li><%= link_to meetup.event_name, meetup_path(meetup.id) %></li>
+</ul>
+<% end %>
+
+<%= link_to "All Meetups", meetups_path %> |
+<%= link_to "All Resorts", resorts_path %>

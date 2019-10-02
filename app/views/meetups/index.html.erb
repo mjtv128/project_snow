@@ -1,0 +1,21 @@
+<h1 align='center'>All Meetups</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Event</th>
+        <th>Resort</th>
+        <th>Date & Time</th>
+        <th colspan="3"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <% @meetups.each do |meetup| %>
+        <td><%= link_to meetup.event_name, meetup_path(meetup) %></td>
+        <td><%= link_to meetup.resort.resort_name, resort_path(meetup.resort_id) %></td>
+        <td><%= meetup.date_time %></td>
+    </tr>
+    <% end %>
+</tbody>
+</table>
