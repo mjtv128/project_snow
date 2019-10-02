@@ -17,5 +17,13 @@
 </ul>
 <% end %>
 
+<strong>Reviews:</strong>
+<% @resort.reviews.each do |review| %>
+<ul>
+<li><%= link_to review.title, review_path(review.id) %> - <%= link_to review.user.full_name, user_path(review.user) %>, <%= review.rating %></li>
+</ul>
+<% end %>
 <%= link_to "All Meetups", meetups_path %> |
 <%= link_to "All Resorts", resorts_path %>
+
+<h3>PUT LINKS TO ALL MEETUPS ETC IN NAV BAR - REMOVE LINKS AT BUTTOM </h3>
