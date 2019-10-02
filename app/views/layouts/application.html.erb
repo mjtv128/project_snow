@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>PROJECT SNOW - Français</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -14,15 +14,32 @@ body, html {height: 100%}
   background-position: center;
   background-size: cover;
 }
+.topnav {
+  background-color: black;
+  overflow: hidden;
+}
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
 </style>
 <body>
+<div class="topnav w3-animate-opacity">
+  <a href="/meetups">MEETUPS</a>
+  <a href="/resorts">RESORT INFO</a>
+  <a href="/reviews">REVIEWS</a>
+</div>
 
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
   <div class="w3-display-middle">
     <hr class="w3-border-cyan w3-animate-right" style="margin:auto;width:40%">
     <h1 class="w3-jumbo w3-animate-left">PROJECT SNOW</h1>
     <hr class="w3-border-cyan w3-animate-right" style="margin:auto;width:40%">
-    <p><a href="/login" class="text-info w3-large w3-animate-right w3-text-black">LOGIN</a></p>
     <%= yield %>
   </div>
 </div>
