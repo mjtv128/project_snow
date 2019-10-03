@@ -23,9 +23,9 @@
   <%= @user.age %>
 </p>
 <% if session[:user_id] == @user.id %>
-  <%= link_to 'Edit', edit_user_path(@user) %> 
-  <%= link_to 'New Meetup', new_meetup_path %>
-  <%= link_to 'New Review', new_review_path %>
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'New Meetup', new_meetup_path %> |
+  <%= link_to 'New Review', new_review_path %> |
   <%= link_to 'Delete Account', delete_user_path%>
 <% end %>
 

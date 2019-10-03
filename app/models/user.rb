@@ -17,6 +17,10 @@ class User < ApplicationRecord
     has_secure_password
 
     def full_name
-        first_name + " " + last_name
+        if self 
+            first_name + " " + last_name
+        else 
+            "Chris K"
+        end
     end
 end

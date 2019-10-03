@@ -9,4 +9,6 @@
 <p>
 <strong>Date & Time: </strong><%= @meetup.date_time %></p>
 
-<%= link_to "All Meet Ups", meetups_path %>
+<%= link_to "Join Meetup!", add_user_to_meetup_path(@meetup) %>
+
+<%= link_to "All Meetups", meetups_path %>
