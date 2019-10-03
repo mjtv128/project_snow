@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>PROJECT SNOW - Français</title>
+<title>PROJECT SNOW</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -26,18 +26,25 @@ body, html {height: 100%}
   text-decoration: none;
   font-size: 17px;
 }
-
+ 
 </style>
 <body>
 <div class="topnav w3-animate-opacity">
   <a href="/meetups">MEETUPS</a>
   <a href="/resorts">RESORT INFO</a>
   <a href="/reviews">REVIEWS</a>
+   <% if current_user %>
+    <a href="/logout">LOGOUT</a>
+    <%= link_to "PROFILE", user_path(current_user) %>
+  <% else %>
+    <%= link_to "LOGIN", login_path %>
+  <% end %>
 </div>
+
 
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
   <div class="w3-display-middle">
-    <hr class="w3-border-cyan w3-animate-right" style="margin:auto;width:40%">
+    <hr class="w3-border-cyan w3-animate-left" style="margin:auto;width:40%">
     <h1 class="w3-jumbo w3-animate-left">PROJECT SNOW</h1>
     <hr class="w3-border-cyan w3-animate-right" style="margin:auto;width:40%">
     <%= yield %>

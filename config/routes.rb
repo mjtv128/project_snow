@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  resources :users
-  resources :reviews
+  resources :users, except: [:destroy]
+  resources :reviews, except: [:destroy]
 
   root 'homes#index'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
+  get '/users/:id/destroy', to: 'users#destroy', as: 'delete_user'
+  get '/reviews/:id/destroy', to: 'reviews#destroy', as: 'delete_review'
 
   resources :resorts, only: [:index, :show]
   resources :conversation, only: [:create, :destroy, :show]

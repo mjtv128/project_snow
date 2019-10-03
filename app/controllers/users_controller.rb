@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :require_user, except: [:index, :show]
-  before_action :authorize_user, only: [:new, :create, :edit, :update, :destroy]
-
+  before_action :set_user, only: [:show, :edit, :update]
+  before_action :require_user, except: [:index, :show, :new, :create]
+  before_action :authorize_user, only: [:edit, :update, :destroy]
+  before_action :require_login, only: [:edit, :update, :destroy]
+  before_action :current_user, only: [:edit, :update]
 
   # GET /users
   # GET /users.json
@@ -25,6 +26,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
+  
 
   # POST /users
   # POST /users.json
@@ -35,6 +37,7 @@ class UsersController < ApplicationController
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
+        session[:user_id] = @user.id
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -59,11 +62,9 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    User.destroy(session[:user_id])
+    session.destroy
+    redirect_to '/'
   end
 
   private

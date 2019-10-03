@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
+<% if flash[:success] %>
+  <p><%= flash[:success] %></p>
+<% end %>
 
 <p>
   <strong>First name:</strong>
@@ -19,8 +22,13 @@
   <strong>Age:</strong>
   <%= @user.age %>
 </p>
+<% if session[:user_id] == @user.id %>
+  <%= link_to 'Edit', edit_user_path(@user) %> 
+  <%= link_to 'New Meetup', new_meetup_path %>
+  <%= link_to 'New Review', new_review_path %>
+  <%= link_to 'Delete Account', delete_user_path%>
+<% end %>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
-<%= link_to 'New Meetup', new_meetup_path %>
+
+
 

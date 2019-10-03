@@ -25,6 +25,9 @@
 <%= f.label :resort_id %><br>
 <%= f.collection_select(:resort_id, Resort.all, :id, :resort_name) %><br><br>
 </p>
+ 
+<%= f.hidden_field :organiser_id, :value => current_user.id %><br>
+
 
 <p><%= f.submit %><p>
 

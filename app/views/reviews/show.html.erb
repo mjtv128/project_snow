@@ -3,4 +3,9 @@
 <%= @review.content %><br>
 Rating: <%= @review.rating %><br>
 
+<% if session[:user_id] == @review.user.id %>
+    <%= link_to 'Edit Review', edit_review_path(@review) %> 
+    <%= link_to 'Delete Review', delete_review_path%>
+<% end %>
+
 <%= link_to "All Reviews", reviews_path %>

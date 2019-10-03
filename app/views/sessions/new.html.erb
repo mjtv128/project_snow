@@ -1,5 +1,7 @@
-
 <h1 align= 'center'>Log in</h1>
+<% if flash[:danger] %>
+  <p><%= flash[:danger] %></p>
+<% end %>
 <%= form_for(:session, url: login_path) do |f| %>
     <p align= 'center'><%= f.label :email %><br>
     <%= f.email_field :email %><br><br>

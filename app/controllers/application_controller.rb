@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
     def current_user 
         if session[:user_id]
-            @current_user ||= User.find(session[:user_id])
+            @current_user = User.find(session[:user_id])
         else 
             @current_user = nil
         end
@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     def authorize_user 
         unless current_user 
             flash[:notice] = "You need to log in"
-            redirect_to new_sesion_path
+            redirect_to login_path
         end
     end
 

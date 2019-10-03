@@ -29,6 +29,8 @@
     <%= f.label :resort_id %><br>
     <%= f.collection_select :resort_id, Resort.all, :id, :resort_name %><br><br>
 
+    <%= f.hidden_field :user_id, :value => session[:user_id] %><br>
+
  
     <%= f.submit %>
 <% end %>
