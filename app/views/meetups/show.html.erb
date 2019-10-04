@@ -1,4 +1,7 @@
 
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
 <h4><%= @meetup.event_name %></h4><br>
 <p>
 <strong>Hosted by:</strong> <%= @meetup.organiser.full_name %></p>
@@ -8,7 +11,17 @@
 <strong>Location: </strong> <%= @meetup.resort.resort_name %>, <%= @meetup.location %></p>
 <p>
 <strong>Date & Time: </strong><%= @meetup.date_time %></p>
+<p>
+<strong> Attending: <% @attending_ids.each do |id| %>
+                        <ul>
+                            <li> <%= link_to User.find(id).full_name, user_path(id)  %></li>
+                        </ul>
+                    <% end %>
+<br>
 
-<%= link_to "Join Meetup!", add_user_to_meetup_path(@meetup) %>
+<% if @attending_ids.include?(session[:user_id])  %>
+    <%= link_to "Cancel attendance", cancel_attendance_path %>
+<% end %>
+<%= link_to "Join Meetup!", add_to_meetup_path %>
 
 <%= link_to "All Meetups", meetups_path %>

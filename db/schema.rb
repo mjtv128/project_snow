@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2019_09_30_155353) do
 
   create_table "attendees_meetups", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "attendee_id"
     t.integer "meetup_id"
   end
 
