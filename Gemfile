@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 gem 'faker'
+gem 'json'
+gem 'unirest'
 
 gem 'gmaps4rails'
 gem 'underscore-rails'

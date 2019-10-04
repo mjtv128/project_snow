@@ -1,14 +1,18 @@
-<h4><%= @resort.resort_name %></h4><br>
+<h4 align= 'center'><%= @resort.resort_name %></h4><br>
+<div align= 'center'>
 <p>
+<% if @resort.location %>
 <strong>Location:</strong> <%= @resort.location %></p>
 <p>
+<% end %>
 <strong>Map:</strong> <%= "MAP INFO" %> GOOGLE MAP?</p>
 <p>
 <strong>Weather: </strong> <%= "WEATHER INFO" %></p>
 <p>
-<strong>Population: </strong><%= 'POPULATION DATA'%></p>
+<strong>Population: </strong><%= @resort.population%></p>
 <p>
-<strong>Piste Map:</strong><%= 'PISTE MAP DATA' %></p>
+</div>
+<img src= <%= @resort.piste_map %> width = 90%></p>
 <p>
 <strong>Meetups happening here:</strong>
 <% @resort.meetups.each do |meetup| %>
