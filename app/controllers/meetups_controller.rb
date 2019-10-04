@@ -1,6 +1,6 @@
 class MeetupsController < ApplicationController
     def index
-        @meetups = Meetup.all
+        @meetups = Meetup.search(params[:search])
     end
 
     def new 
