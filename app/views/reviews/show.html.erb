@@ -1,7 +1,10 @@
 <h2><%= @review.title %><br></h2>
 <h3>Authored by: <%= @review.user.first_name %></h3><br>
 <%= @review.content %><br>
-Rating: <%= @review.rating %><br>
+<% @review.rating.to_i.times do %>
+<span class='glyphicon glyphicon-star' ></span>
+<% end %>
+
 
 <% if session[:user_id] == @review.user.id %>
     <%= link_to 'Edit Review', edit_review_path(@review) %> 

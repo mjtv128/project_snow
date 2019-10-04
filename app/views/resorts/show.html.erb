@@ -5,14 +5,11 @@
 <strong>Location:</strong> <%= @resort.location %></p>
 <p>
 <% end %>
-<strong>Map:</strong> <%= "MAP INFO" %> GOOGLE MAP?</p>
-<p>
-<strong>Weather: </strong> <%= "WEATHER INFO" %></p>
 <p>
 <strong>Population: </strong><%= @resort.population%></p>
 <p>
 </div>
-<img src= <%= @resort.piste_map %> width = 90%></p>
+<img src= <%= @resort.piste_map %> align= 'center' width = 90%></p>
 <p>
 <strong>Meetups happening here:</strong>
 <% @resort.meetups.each do |meetup| %>
@@ -30,8 +27,6 @@
 <% end %>
 
 
-
-
 <iframe
   align="left"
   width="400"
@@ -40,3 +35,4 @@
   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDp3KAT8TqZXXI9jr3Fims0GmBTbRg1LwE
     &q=<%=@resort.resort_name%>+<%=@resort.resort_name%>" allowfullscreen>
 </iframe>
+
