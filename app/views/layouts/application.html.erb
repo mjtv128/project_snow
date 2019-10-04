@@ -12,7 +12,7 @@ body, html {height: 100%}
   background-color: black;
   min-height: 100%;
   background-position: center;
-  background-size: cover;
+  background-size: auto;
 }
 .topnav {
   background-color: black;
@@ -38,14 +38,17 @@ body, html {height: 100%}
     <%= link_to "PROFILE", user_path(current_user) %>
   <% else %>
     <%= link_to "LOGIN", login_path %>
+    <%= link_to "REGISTER", new_user_path %>
   <% end %>
 </div>
+
 
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white" align='center'>
   <%# <div class="w3-display-middle" style:="height:100vh;"> %>
     <hr class="w3-border-cyan w3-animate-left" style="margin:auto;width:40%">
+
     <h1 class="w3-jumbo w3-animate-left">PROJECT SNOW</h1>
-    <hr class="w3-border-cyan w3-animate-right" style="margin:auto;width:40%">
+    <hr class="w3-border-cyan w3-animate-right" style="margin:auto;width:80%">
     <%= yield %>
   <%# </div> %>
 </div>

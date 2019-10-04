@@ -52,9 +52,9 @@ class ReviewsController < ApplicationController
 
 
     def require_same_user 
-        if current_user != @review.user
-        flash[:danger] = "You can only edit or delete your own review."
-        redirect_to user_path(current_user)
+        if current_user != @review.user.id
+            flash[:danger] = "You can only edit or delete your own review."
+            redirect_to user_path(current_user)
         end
     end
 end

@@ -1,6 +1,6 @@
 class MeetupsController < ApplicationController
     def index
-        @meetups = Meetup.all
+        @meetups = Meetup.search(params[:search])
     end
 
     def new 
@@ -8,7 +8,10 @@ class MeetupsController < ApplicationController
     end
 
     def show 
+    
         @meetup = Meetup.find(params[:id])
+        #retrieve all users with a meetup id from params[:id]
+        @attending_ids = AttendeesMeetup.where(meetup_id: params[:id]).map(&:attendee_id).uniq
     end
 
     def create 

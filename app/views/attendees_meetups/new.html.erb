@@ -1,0 +1,11 @@
+<h1> Please confirm meetup attendance. </h1>
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+<%= form_for(@attendees_meetup) do |f| %>
+    <%= f.hidden_field :user_id, :value => session[:user_id] %>
+    <%= f.hidden_field :meetup_id, :value => params[:id] %>
+
+    <%= f.submit %>
+
+<% end %>

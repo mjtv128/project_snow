@@ -15,6 +15,8 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    meetups = AttendeesMeetup.where(attendee_id: session[:user_id]).map(&:meetup_id).uniq
+    @my_meetups = Meetup.where(id: meetups).map(&:event_name)
   end
 
   # GET /users/new
