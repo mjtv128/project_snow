@@ -1,6 +1,7 @@
 class ResortsController < ApplicationController
     def index 
         @resorts = Resort.all
+        # @region_name = APIRequestMaker.new.re
     end
 
     def show 
