@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 <h1>All Resorts</h1>
 
-<table>
-    <thead>
+<table class="resort-table">
+    <thead style="display:block;"
     <tr>
     <th>Resorts</th>
     </tr>
@@ -12,7 +12,6 @@
     <% @resorts.each do |resort| %>
     <tr>
     <td><%= link_to resort.resort_name, resort_path(resort.id) %>
-    <td><%= resort.location %></td>
     </tr>
     <% end %>
     </tbody>

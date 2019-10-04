@@ -13,16 +13,6 @@ end
 
 User.create(first_name: "HIhihihihi", last_name: "byeeee", email: "hihihi@gmail.com", password: 'github123', age: 20, attendees_meetups_id: 3)
 
-20.times do 
-    Resort.create(
-        location: Faker::Address.street_name,
-        resort_name: Faker::Coffee.blend_name,
-        map_url: Faker::Address.street_name,
-        weather: Faker::Coffee.variety,
-        population: rand(10000..300000),
-        piste_map: Faker::Address.street_name
-    )
-end
 
 Resort.create(resort_name: "Abetone", piste_map: "https://skimap.org/data/2281/1899/1414623123.jpg", population: rand(500..5000000)) 
 Resort.create(resort_name: "Adamello Ski", location: 'Passo del Tonale', piste_map: "https://skimap.org/data/2085/1/1259375404jpg_render.jpg", population: rand(500..5000000) )
@@ -171,30 +161,39 @@ Resort.create(resort_name: "Piancavallo", piste_map: "https://skimap.org/data/30
 Resort.create(resort_name: "Piane di Mocogno", piste_map: "https://skimap.org/data/4472/1899/1415892429.jpg", population: rand(500..5000000))
 
 
-
-
-
-
-20.times do 
+80.times do 
     Meetup.create(
         event_name: Faker::University.name,
-        description: Faker::Address.street_name,
+        description: Faker::Lorem.paragraphs(rand(2..4)),
         location: Faker::Address.street_name,
         date_time: DateTime.now,
-        resort_id: rand(1..20),
+        resort_id: rand(20..165),
         organiser_id: rand(1..20)
     )
 end
 
-20.times do 
-    Review.create(
-        title: Faker::Address.street_name,
-        content: Faker::Address.street_name,
-        rating: rand(1..5),
-        user_id: rand(1..20),
-        resort_id: rand(1..20)
+200.times do 
+    Meetup.create(
+        event_name: Faker::University.name,
+        description: Faker::Lorem.paragraphs(rand(2..4)),
+        location: Faker::Address.street_name,
+        date_time: DateTime.now,
+        resort_id: rand(20..165),
+        organiser_id: rand(1..20)
     )
 end
+
+80.times do 
+    Review.create(
+        title: Faker::Superhero.name,
+        content: Faker::Lorem.paragraphs(rand(1..2)),
+        rating: rand(1..5),
+        user_id: rand(1..20),
+        resort_id: rand(20..165)
+    )
+end
+
+
 
 20.times do 
     Conversation.create(

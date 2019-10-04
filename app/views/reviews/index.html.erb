@@ -1,11 +1,14 @@
 <h1> Welcome to the Reviews index page! </h1>
+
 <% if flash[:notice] %>
   <p><%= flash[:notice] %></p>
 <% end %>
-
+<div class='grid-container'>
 <% @reviews.each do |review| %>
     <ul>
         <li> <%= link_to review.title, review_path(review) %></li>
         
     </ul>
 <% end %>
+</div>
+
