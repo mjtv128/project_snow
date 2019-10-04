@@ -22,6 +22,15 @@
   <strong>Age:</strong>
   <%= @user.age %>
 </p>
+
+<p> My Meetups </p>
+<% @my_meetups.each do |event| %>
+<ul>
+  <li><%= event %></li>
+</ul>
+<% end %>
+
+
 <% if session[:user_id] == @user.id %>
   <%= link_to 'Edit', edit_user_path(@user) %> |
   <%= link_to 'New Meetup', new_meetup_path %> |
